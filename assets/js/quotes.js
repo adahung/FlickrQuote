@@ -31,3 +31,34 @@ function PhotoTemplates() {
 		'hue-rotate'
 	];
 }
+
+function FlickrGroup() {
+	this.groups = [
+		{ id: '34427469792@N01', name: 'FlickrCentral'},
+		{ id: '1463451@N25', name: 'Project Weather'},
+		{ id: '35034344814@N01', name: 'Dogs! Dogs! Dogs!'} //FlickrCentral (34427469792@N01)
+	];
+
+	this.getRandomGroup = function() {
+		var index = Math.floor(Math.random()*this.groups.length);
+		return this.groups[index];
+	}
+}
+
+function FlickrParams() {
+	this.sort = [
+		//'date-posted-asc', 
+		'date-posted-desc', 
+		//'date-taken-asc', 
+		'date-taken-desc', 
+		'interestingness-desc', 
+		//'interestingness-asc', 
+		'relevance'
+	];
+
+	this.getRandomSort = function() {
+		var index = Math.floor(Math.random()*this.sort.length);
+		return this.sort[index];
+	}
+}
+

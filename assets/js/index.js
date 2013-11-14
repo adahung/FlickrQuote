@@ -14,16 +14,22 @@ function getSelectedText() {
 }
 
 function doSomethingWithSelectedText() {
-    var selectedText = getSelectedText();
+    var selectedText = getSelectedText(),
+        flickrGroups = new FlickrGroup(),
+        flickrParams = new FlickrParams(),
+        group = flickrGroups.getRandomGroup(),
+        sort = flickrParams.getRandomSort();
     if (selectedText) {
-        document.getElementById('text').innerHTML = 'Search <b>' + selectedText + '</b> in FlickrCentral (34427469792@N01)';
-        getPhotosFromFlickr(selectedText, '34427469792@N01');
+        document.getElementById('text').innerHTML = 'Search <b>' + selectedText + '</b> in <b>' + group.name + '</b> (' + sort + ')';
+        getPhotosFromFlickr(selectedText, group.id, sort);
     }
 }
 
-function getPhotosFromFlickr(text, group_id) {
+function getPhotosFromFlickr(text, group_id, sort) {
     var url = 'http://nameless-fjord-2265.herokuapp.com/photo',
-        args = 'count=12&text=' + encodeURIComponent(text) + '&group_id=' + encodeURIComponent(group_id) + '&sort=interestingness-desc';
+        args;
+
+    args = 'count=12&text=' + encodeURIComponent(text) + '&group_id=' + encodeURIComponent(group_id) + '&sort=' + sort;
     makeRequest(url + '?' + args, parsePhotoResp);
 }
 
