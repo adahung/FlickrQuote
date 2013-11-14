@@ -41,3 +41,52 @@ body {
 	font-weight: bold;
 }
 
+#publish {
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	display: none;
+}
+
+#pubCamera,
+#pubCameraBg,
+#pubCameraWrapper {
+	position: absolute;
+	top: 50px;
+	left: 150px;
+	width: 400px;
+	height: 400px;
+	z-index: 120;
+}
+
+#pubCameraWrapper {
+	height: 320px;
+	overflow: hidden;
+}
+
+#pubCamera {
+	top: 0;
+	left: 0;
+}
+
+#pubCameraBg {
+	z-index: 100;
+}
+
+#pubPhoto {
+	z-index: 110;
+	position: absolute;
+	width: 250px;
+	height: 300px;
+	top: 100px;
+	left: 223px;
+	background-color: #fff;
+}
+
+#publish .photoContainer {
+	margin: 0;
+}

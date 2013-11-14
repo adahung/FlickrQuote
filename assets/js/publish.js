@@ -40,3 +40,59 @@ function renderPublishOverlay(el) {
 		}	
 	}
 }
+
+function photoPublishHandler(e) {
+	var elem, evt = e ? e:event;
+	if (evt.srcElement)  elem = evt.srcElement;
+	else if (evt.target) elem = evt.target;
+
+	if (elem.className == 'photo-mask') {
+		showPublishOverlay(elem.parentNode);
+	}
+
+}
+
+function showPublishOverlay(photoNode) {
+	var publishOverlay = document.getElementById('publish'),
+		publishPhoto = document.getElementById('pubPhoto'),
+		photoTop = parseInt(document.defaultView.getComputedStyle(publishPhoto, null).getPropertyValue('top').replace('px', '')),
+		initTop = photoTop,
+		overlay,
+		canvasPhoto;
+
+	publishOverlay.style.display = 'block';
+
+	canvasPhoto = getPublishPhoto(photoNode);
+	publishPhoto.appendChild(canvasPhoto);
+
+	// animate the photo out of camera
+	var internal = setInterval(function() {
+		if (photoTop < initTop + 270) {
+			photoTop += 1;
+			publishPhoto.style.top = photoTop.toString() + 'px';
+		}
+		else {
+			clearInterval(internal);
+		}
+		
+	}, 10);
+
+}
+
+function getPublishPhoto(photoNode) {
+	var pubPhoto = document.createElement('DIV'),
+		imgNode, textNode;
+	pubPhoto.className = photoNode.className;
+
+	imgNode = photoNode.getElementsByClassName('photo')[0].cloneNode(true);
+	textNode = photoNode.getElementsByClassName('photoText')[0].cloneNode(true);
+
+	pubPhoto.appendChild(imgNode);
+	pubPhoto.appendChild(textNode);
+
+	return pubPhoto;
+}
+
+
+
+
