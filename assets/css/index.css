@@ -49,7 +49,7 @@ body {
 	position: fixed;
 	top: 0;
 	z-index: 100;
-	display: none;
+	/*display: none;*/
 }
 
 #pubCamera,
@@ -87,7 +87,7 @@ body {
 	background-color: #fff;
 }
 
-#pubPhotoIcon {
+#pubPhoto .pubPhotoIcon {
 	position: absolute;
 	bottom: 10px;
 	right: 10px;
@@ -97,3 +97,36 @@ body {
 #publish .photoContainer {
 	margin: 0;
 }
+ 
+#pubMsg {
+	height: 600px;
+	width: 500px;
+	position: absolute;
+	top: 100px;
+	left: 750px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.75);
+}
+
+#pubMsg .btn {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+	
+}
+
+#pubMsg .logo {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#pubMsg .back {
+	text-align: center;
+}
+
+#pubMsg .btn.flickr {
+	background-image: url('http://i2.wp.com/touchreviews.net/wp-content/uploads/2013/10/Flickr-icon.png?fit=1024%2C1024');
+	background-size: 100px 100px;
+}
+
