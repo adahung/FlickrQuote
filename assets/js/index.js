@@ -40,19 +40,21 @@ function renderPhotoList(photos) {
 
     for (var index in photos) {
         var photoObj = photos[index],
-            photoTemplate,
-            photoNode;
+            photoNode = document.createElement("li"),
+            imgNode = document.createElement('img');
         
-        photoTemplate = '<img src="' + photoObj.url + '" width="250" height="250">';
-        photoNode = document.createElement("li");
-        photoNode.className = 'photo';
-        photoNode.innerHTML = photoTemplate;
+        imgNode.setAttribute('src', photoObj.url);
+        imgNode.setAttribute('width', '250');
+        imgNode.setAttribute('height', '250');
+        imgNode.className = 'photo';
+        photoNode.className = 'photoContainer';
+        photoNode.appendChild(imgNode);
 
         photoList.appendChild(photoNode);
     }
 
     // render template
-    renderAllPhotoNodes(photoList, text, 'center');
+    renderAllPhotoNodes(photoList, text, 'original');
 
 }
 
@@ -65,5 +67,5 @@ document.getElementById('quote').onmouseup = doSomethingWithSelectedText;
 document.getElementById('qInput').value = quoteCollection.getOne();
 updateQuote();
 renderAllPhotoTemplates(document.getElementById('templateList'), "I'm doing Q4 Hackday!");
-
+document.getElementById('templateList').onclick = tmplSelectionHandler;
 

@@ -1,4 +1,4 @@
-.photo,
+.photoContainer,
 .template {
 	display: inline-block;
 	margin: 5px;
@@ -40,21 +40,21 @@
 	bottom: 10px;
 }
 
-.template.original {
+.original {
 
 }
 
-.template.original .photoText {
+.original .photoText {
   	font-family: monospace;
 	font-weight: lighter;
 	letter-spacing: 0.2em;
 }
 
-.template.blur .photo {
+.blur .photo {
 	-webkit-filter: blur(3px);
 }
 
-.template.blur .photoText {
+.blur .photoText {
 	font-family: 'Hoefler Text', Georgia, 'Times New Roman', serif;
 	text-transform: uppercase;
 	letter-spacing: .2em;
@@ -64,28 +64,28 @@
 	left: 50px;*/
 }
 
-.template.grayscale .photo {
+.grayscale .photo {
 	-webkit-filter: grayscale(100%);
 }
 
-.template.grayscale .photoText {
+.grayscale .photoText {
 	color: #000;
 	font-family: cursive;
 }
 
-.template.sepia .photo {
+.sepia .photo {
 	-webkit-filter: sepia(100%) brightness(90%);
 }
 
-.template.sepia .photoText {
+.sepia .photoText {
 	font-family: fantasy;
 }
 
-.template.contrast .photo {
+.contrast .photo {
 	-webkit-filter: contrast(150%);
 }
 
-.template.contrast .photoText {
+.contrast .photoText {
 	background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
   	color:transparent;
   	-webkit-background-clip: text;
@@ -94,16 +94,16 @@
 
 }
 
-.template.hue-rotate .photo {
+.hue-rotate .photo {
 	-webkit-filter: hue-rotate(280deg);
 }
 
-.template.hue-rotate .photoText {
+.hue-rotate .photoText {
   	font-family: monospace;
 
 }
 
-.template .photoText {
+.photoText {
 	text-align: left;
 	top: 20px;
 	left: 20px;

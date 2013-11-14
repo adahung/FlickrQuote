@@ -1,21 +1,10 @@
-function renderAllPhotoNodes(photoListNode, text, typeClassName) {
-	var photoNodeArray = photoListNode.getElementsByClassName('photo'),
+function renderAllPhotoNodes(photoListNode, text, tmplName) {
+	var photoNodeArray = photoListNode.getElementsByClassName('photoContainer'),
 		length = photoNodeArray.length;
 	for (var idx = 0; idx < length; idx++) {
-		if (typeClassName == 'center') {
-			renderTextCenter(photoNodeArray[idx], text, typeClassName);
-		}
-		else if (typeClassName == 'blurAndCenter') {
-			renderBlurAndCenter(ph)
-		}
+		photoNodeArray[idx].className = 'photoContainer';
+		renderPhotoTemplate(photoNodeArray[idx], text, tmplName);
 	}
-}
-
-function renderTextCenter(photoNode, text, typeClassName) {
-    var textNode = document.createElement("span");
-    textNode.className = 'photoText ' + typeClassName;
-    textNode.innerHTML = text;
-    photoNode.appendChild(textNode);
 }
 
 function renderAllPhotoTemplates(templateListNode, text) {
@@ -24,19 +13,44 @@ function renderAllPhotoTemplates(templateListNode, text) {
 
 	for (var idx in defaultTmpl.templates) {
 		var tmplNode = document.createElement('li'),
-			textNode = document.createElement('span')
 			imgNode = document.createElement('img'),
 			tmplName = defaultTmpl.templates[idx];
-		tmplNode.className = 'template ' + tmplName;
-		textNode.className = 'photoText ' + tmplName;
-		imgNode.className = 'photo ' + tmplName;
-		textNode.innerHTML = text;
+		
+		tmplNode.className = 'template';
+		imgNode.className = 'photo';
 		imgNode.setAttribute('src', './assets/img/template_default.jpg');
 		imgNode.setAttribute('width', '300');
 		imgNode.setAttribute('height', '250');
 
 		tmplNode.appendChild(imgNode);
-		tmplNode.appendChild(textNode);
+		renderPhotoTemplate(tmplNode, text, tmplName);
+		
 		templateListNode.appendChild(tmplNode);
 	}
 }
+
+function tmplSelectionHandler(e) {
+	var elem, evt = e ? e:event;
+	if (evt.srcElement)  elem = evt.srcElement;
+	else if (evt.target) elem = evt.target;
+
+	if (elem.tagName.toUpperCase() == 'IMG') {
+		var tmplName = elem.parentNode.className.replace('template ', ''),
+			photoList = document.getElementById('photoList'),
+			text = document.getElementById('quote').innerHTML;
+		renderAllPhotoNodes(photoList, text, tmplName);
+	}
+	
+	return true;
+}
+
+function renderPhotoTemplate(photoNode, text, tmplName) {
+	var textNode = document.createElement('span');
+
+	photoNode.className = photoNode.className + ' ' + tmplName;
+	textNode.className = 'photoText';
+	textNode.innerHTML = text;
+
+	photoNode.appendChild(textNode);
+}
+
