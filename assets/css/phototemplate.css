@@ -3,6 +3,7 @@
 	display: inline-block;
 	margin: 5px;
 	position: relative;
+	overflow: hidden;
 }
 
 .template {

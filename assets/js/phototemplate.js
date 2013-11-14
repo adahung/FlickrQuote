@@ -34,7 +34,7 @@ function tmplSelectionHandler(e) {
 	if (evt.srcElement)  elem = evt.srcElement;
 	else if (evt.target) elem = evt.target;
 
-	if (elem.tagName.toUpperCase() == 'IMG') {
+	if (elem.className == 'photo-mask') {
 		var tmplName = elem.parentNode.className.replace('template ', ''),
 			photoList = document.getElementById('photoList'),
 			text = document.getElementById('quote').innerHTML;
