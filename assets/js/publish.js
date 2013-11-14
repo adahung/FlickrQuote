@@ -5,28 +5,23 @@ function photoHoverHandler(e) {
 	else if (evt.target) elem = evt.target;
 
 	parentNode = elem.parentNode;
-	console.log(elem.tagName);
-	console.log(elem.className);
 	// remove camera overlay if mouseout of overlay
-	if (elem.className == 'camera-overlay' && evt.type == 'mouseout') {
-		console.log('out');
-        elem.parentNode.classList.remove('hover');
-        renderPublishOverlay(elem.parentNode);
-	}
-	else if (elem.className == 'camera-icon') {
-	}
-	else if (parentNode.tagName == 'LI') {
-		if (!elem.parentNode.classList.contains('hover')) {
-			console.log('enter');
-			elem.parentNode.classList.add('hover');
-			renderPublishOverlay(elem.parentNode);
+	if (elem.className == 'photo-mask') {
+		if (evt.type == 'mouseout') {
+	        parentNode.classList.remove('hover');
+	        renderPublishOverlay(parentNode);
+		}
+		else if (evt.type == 'mouseover' && !parentNode.classList.contains('hover')) {
+			parentNode.classList.add('hover');
+			renderPublishOverlay(parentNode);
 		}
 	}
+	
+	return true;
 }
 
 function renderPublishOverlay(el) {
 	if (el.classList.contains('hover') && !el.classList.contains('camera')) {
-		console.log('render camera');
 		el.classList.add('camera');
 		// add camera
 		var cameraOverlay = document.createElement('div'),

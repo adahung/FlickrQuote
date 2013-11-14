@@ -112,7 +112,8 @@
 	line-height: 25px;
 }
 
-.camera-overlay {
+.camera-overlay,
+.photo-mask {
 	background-color: rgba(0, 0, 0, .75);
 	position: absolute;
 	top: 0;
@@ -120,6 +121,11 @@
 	width: 250px;
 	height: 250px;
 	z-index: 30;
+}
+
+.photo-mask {
+	background-color: transparent;
+	z-index: 50;
 }
 
 .camera-icon {

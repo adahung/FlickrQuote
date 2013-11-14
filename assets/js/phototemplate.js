@@ -45,12 +45,15 @@ function tmplSelectionHandler(e) {
 }
 
 function renderPhotoTemplate(photoNode, text, tmplName) {
-	var textNode = document.createElement('span');
+	var textNode = document.createElement('span'),
+		photoMask = document.createElement('DIV');
 
 	photoNode.className = photoNode.className + ' ' + tmplName;
 	textNode.className = 'photoText';
 	textNode.innerHTML = text;
+	photoMask.className = 'photo-mask';
 
 	photoNode.appendChild(textNode);
+	photoNode.appendChild(photoMask);
 }
 
