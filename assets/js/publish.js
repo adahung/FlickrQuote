@@ -6,20 +6,22 @@ function photoHoverHandler(e) {
 
 	parentNode = elem.parentNode;
 	console.log(elem.tagName);
-	if (parentNode.tagName == 'LI') {
-		if (evt.type == 'mouseout') {
-			console.log('out');
-			elem.parentNode.classList.remove('hover');
-			renderPublishOverlay(elem.parentNode);
-		}
-		else if (!elem.parentNode.classList.contains('hover')) {
+	console.log(elem.className);
+	// remove camera overlay if mouseout of overlay
+	if (elem.className == 'camera-overlay' && evt.type == 'mouseout') {
+		console.log('out');
+        elem.parentNode.classList.remove('hover');
+        renderPublishOverlay(elem.parentNode);
+	}
+	else if (elem.className == 'camera-icon') {
+	}
+	else if (parentNode.tagName == 'LI') {
+		if (!elem.parentNode.classList.contains('hover')) {
 			console.log('enter');
 			elem.parentNode.classList.add('hover');
 			renderPublishOverlay(elem.parentNode);
 		}
 	}
-
-	e.stopPropagation();
 }
 
 function renderPublishOverlay(el) {
