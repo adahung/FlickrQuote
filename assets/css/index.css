@@ -1,0 +1,43 @@
+body {
+	font-size: 15px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	line-height: 18px;
+}
+
+#title {
+	margin-top: 20px;
+	margin-bottom: 15px;
+	font-size: 20px;
+	text-align: center;
+}
+
+#title span {
+	font-size: 55px;
+	font-family: cursive;
+}
+
+#input {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#input input {
+	width: 450px;
+	height: 30px;
+	font-size: 15px;
+	padding: 5px 10px;
+}
+
+#show,
+#select,
+#photos,
+#templateContainer {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#show h1 {
+	font-size: 20px;
+	font-weight: bold;
+}
+

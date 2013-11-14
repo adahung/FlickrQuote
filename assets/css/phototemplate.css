@@ -1,0 +1,115 @@
+.photo,
+.template {
+	display: inline-block;
+	margin: 5px;
+	position: relative;
+}
+
+.template {
+	width: 250px;
+	height: 300px;
+	/*border: 1px solid rgba(0,0,0,.25);*/
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+	overflow: hidden;
+}
+
+.template .photo {
+	margin: 0;
+}
+
+.template img {
+	/*background: url('../../assets/img/template_default.jpg') no-repeat;
+	background-size: 300px 250px;
+	*/
+}
+
+.photoText {
+	z-index: 10;
+	color: white;
+	font-size: 15px;
+	display: inline-block;
+	position: absolute;
+}
+
+.photoText.center {
+	color: #fff;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	right: 10px;
+	bottom: 10px;
+}
+
+.template.original {
+
+}
+
+.template.original .photoText {
+  	font-family: monospace;
+	font-weight: lighter;
+	letter-spacing: 0.2em;
+}
+
+.template.blur .photo {
+	-webkit-filter: blur(3px);
+}
+
+.template.blur .photoText {
+	font-family: 'Hoefler Text', Georgia, 'Times New Roman', serif;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	width: 220px;
+	line-height: 1.1em;
+	/*top: 50px;
+	left: 50px;*/
+}
+
+.template.grayscale .photo {
+	-webkit-filter: grayscale(100%);
+}
+
+.template.grayscale .photoText {
+	color: #000;
+	font-family: cursive;
+}
+
+.template.sepia .photo {
+	-webkit-filter: sepia(100%) brightness(90%);
+}
+
+.template.sepia .photoText {
+	font-family: fantasy;
+}
+
+.template.contrast .photo {
+	-webkit-filter: contrast(150%);
+}
+
+.template.contrast .photoText {
+	background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  	color:transparent;
+  	-webkit-background-clip: text;
+  	font-weight: bold;
+  	font-family: monospace;
+
+}
+
+.template.hue-rotate .photo {
+	-webkit-filter: hue-rotate(280deg);
+}
+
+.template.hue-rotate .photoText {
+  	font-family: monospace;
+
+}
+
+.template .photoText {
+	text-align: left;
+	top: 20px;
+	left: 20px;
+	width: 150px;
+	font-size: 22px;
+	line-height: 25px;
+}
+
+
