@@ -68,4 +68,5 @@ document.getElementById('qInput').value = quoteCollection.getOne();
 updateQuote();
 renderAllPhotoTemplates(document.getElementById('templateList'), "I'm doing Q4 Hackday!");
 document.getElementById('templateList').onclick = tmplSelectionHandler;
-
+document.getElementById('photoList').onmouseover = photoHoverHandler;
+document.getElementById('photoList').onmouseout = photoHoverHandler;

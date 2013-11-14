@@ -112,4 +112,23 @@
 	line-height: 25px;
 }
 
+.camera-overlay {
+	background-color: rgba(0, 0, 0, .75);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 250px;
+	z-index: 30;
+}
 
+.camera-icon {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	margin: auto;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
