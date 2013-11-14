@@ -1,23 +1,24 @@
 <!doctype html>
-<html ng-app>
+<html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script-->
     <link rel="stylesheet" type="text/css" href="assets/index.css">
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.13.0/build/cssreset/cssreset-min.css">
   </head>
   <body>
     <div id="input">
-      <div>
-        <!--label>Paste your Quote here! </label-->
-        <input type="text" ng-model="yourQuote" placeholder="The only way to do great work is to love what you do. -Steve Jobs">
-      </div>
+        <input id="qInput" type="text" placeholder="">
     </div>
     <div id="show">
-      <h1 id="quote" >{{yourQuote}}</h1>
+      <h1 id="quote"></h1>
     </div>
     <div id="select">
       <span id="text"></span>
     </div>
+    <div id="photos">
+    </div>
+    <script src="assets/quotes.js"></script>
+    <script src="assets/httprequest.js"></script>
     <script src="assets/index.js"></script>
   </body>
 </html>

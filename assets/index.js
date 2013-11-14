@@ -1,3 +1,8 @@
+function updateQuote() {
+    console.log('change');
+    document.getElementById("quote").innerHTML = qInput.value;
+}
+
 function getSelectedText() {
     var text = "";
     if (typeof window.getSelection != "undefined") {
@@ -19,48 +24,37 @@ function doSomethingWithSelectedText() {
 function getPhotosFromFlickr(text, group_id) {
     var url = 'http://nameless-fjord-2265.herokuapp.com/photo',
         args = 'text=' + encodeURIComponent(text) + '&group_id=' + encodeURIComponent(group_id) + '&sort=interestingness-desc';
-    makeRequest(url + '?' + args, parseResp);
+    makeRequest(url + '?' + args, parsePhotoResp);
 }
 
-function parseResp(req) {
-    console.log(req.responseText.substring(0, 10));
+function parsePhotoResp(req) {
+    var rslt = JSON.parse(req.responseText);
+    renderPhotoList(rslt.photos);
 }
 
-function makeRequest(url, callback) {
-    var httpRequest;
-    console.log(url);
-    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-      httpRequest = new XMLHttpRequest();
-    } else if (window.ActiveXObject) { // IE
-      try {
-        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
-      } 
-      catch (e) {
-        try {
-          httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-        } 
-        catch (e) {}
-      }
+function renderPhotoList(photos) {
+    // create ul to display photos
+    var template;
+
+    template = '<ul>';
+
+    for (var index in photos) {
+        var photoObj = photos[index],
+            photoTemplate;
+        
+        photoTemplate = '<li class="photo"><img src="' + photoObj.url + '" width="250" height="250"></li>';
+        template += photoTemplate;
     }
 
-    if (!httpRequest) {
-      console.log('Giving up :( Cannot create an XMLHTTP instance');
-      return false;
-    }
-    httpRequest.open('GET', url);
-    // http://www.quirksmode.org/js/xmlhttp.html
-    httpRequest.onreadystatechange = function () {
-        if (httpRequest.readyState == 4) {
-            if (httpRequest.status == 200 || httpRequest.status == 304) {
-                callback(httpRequest);
-            }
-        }
-    }
-    if (httpRequest.readyState == 4) return;
-    httpRequest.send();
+    template += '</ul>';
+
+    document.getElementById('photos').innerHTML = template;
 }
 
+var quoteCollection = new Quotes();
 
-var q = document.getElementById("quote");
-q.onmouseup = doSomethingWithSelectedText;
+document.getElementById('qInput').oninput = updateQuote;
+document.getElementById('quote').onmouseup = doSomethingWithSelectedText;
 
+document.getElementById('qInput').value = quoteCollection.getOne();
+updateQuote();
