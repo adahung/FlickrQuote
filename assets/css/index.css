@@ -45,6 +45,7 @@ body {
 	width: 35px;
 	height: 35px;
 	vertical-align: -12px;
+	cursor: pointer;
 }
 
 #show h1 {
