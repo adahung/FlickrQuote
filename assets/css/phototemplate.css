@@ -105,6 +105,35 @@
 
 }
 
+.template:after {
+	line-height: 35px;
+	font-size: 20px;
+}
+
+.template.original:after {
+	content: "Original";
+}
+
+.template.contrast:after {
+	content: "Contrast";
+}
+
+.template.blur:after {
+	content: "Blur";
+}
+
+.template.grayscale:after {
+	content: "Gray";
+}
+
+.template.sepia:after {
+	content: "Sepia";
+}
+
+.template.hue-rotate:after {
+	content: "Hue rotate";
+}
+
 .photoText {
 	text-align: left;
 	top: 20px;

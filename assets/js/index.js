@@ -14,13 +14,20 @@ function getSelectedText() {
 }
 
 function doSomethingWithSelectedText() {
-    var selectedText = getSelectedText(),
-        flickrGroups = new FlickrGroup(),
+    var selectedText = getSelectedText();
+
+    refreshFlickrSearch(selectedText);
+}
+
+function refreshFlickrSearch(selectedText) {
+    var flickrGroups = new FlickrGroup(),
         flickrParams = new FlickrParams(),
         group = flickrGroups.getRandomGroup(),
         sort = flickrParams.getRandomSort();
+
     if (selectedText) {
-        document.getElementById('text').innerHTML = 'Search <b class="flickrblue">' + selectedText + '</b> in <b id="pickgroup" class="flickrpink">' + group.name + '</b> (' + sort + ')';
+        document.getElementById('text').innerHTML = 'Search <b class="flickrblue">' + selectedText + '</b> in <b id="pickgroup" class="flickrpink">' 
+                + group.name + '</b> (' + sort + ') <img src="http://www.phyllobl.net/components/com_phocagallery/assets/images/icon-reload.gif" class="refresh" onclick="refreshFlickrSearch(\'' + selectedText + '\')">';
         getPhotosFromFlickr(selectedText, group.id, sort);
     }
 }
