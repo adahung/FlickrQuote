@@ -17,6 +17,7 @@ function doSomethingWithSelectedText() {
     var selectedText = getSelectedText();
 
     refreshFlickrSearch(selectedText);
+    renderThirdHint();
 }
 
 function refreshFlickrSearch(selectedText) {
@@ -81,8 +82,10 @@ document.getElementById('qInput').value = quoteCollection.getOne();
 updateQuote();
 renderAllPhotoTemplates(document.getElementById('templateList'), "I'm doing Q4 Hack!");
 document.getElementById('templateList').onclick = tmplSelectionHandler;
+document.getElementById('templateList').onmouseover = tmplHoverHandler;
+document.getElementById('templateList').onmouseout = tmplHoverHandler;
 document.getElementById('photoList').onmouseover = photoHoverHandler;
 document.getElementById('photoList').onmouseout = photoHoverHandler;
 document.getElementById('photoList').onclick = photoPublishHandler;
 
-
+renderFirstHint();

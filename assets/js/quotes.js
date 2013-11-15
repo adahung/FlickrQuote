@@ -12,9 +12,8 @@ function Quotes() {
 	];
 
 	this.getOne = function() {
-		//var index = Math.floor((Math.random()*this.getQuoteLength()));
-		//return this.quotes[index];
-		return '';
+		var index = Math.floor((Math.random()*this.getQuoteLength()));
+		return this.quotes[index];
 	}
 
 	this.getQuoteLength = function() {
@@ -36,8 +35,8 @@ function PhotoTemplates() {
 function FlickrGroup() {
 	this.groups = [
 		{ id: '34427469792@N01', name: 'FlickrCentral'},
-		{ id: '1463451@N25', name: 'Project Weather'}//,
-		//{ id: '35034344814@N01', name: 'Dogs! Dogs! Dogs!'} //FlickrCentral (34427469792@N01)
+		{ id: '1463451@N25', name: 'Project Weather'},
+		{ id: '35034344814@N01', name: 'Dogs! Dogs! Dogs!'} //FlickrCentral (34427469792@N01)
 	];
 
 	this.getRandomGroup = function() {
@@ -49,12 +48,12 @@ function FlickrGroup() {
 function FlickrParams() {
 	this.sort = [
 		//'date-posted-asc', 
-		//'date-posted-desc', 
+		'date-posted-desc', 
 		//'date-taken-asc', 
 		//'date-taken-desc', 
-		'interestingness-desc'//, 
+		'interestingness-desc', 
 		//'interestingness-asc', 
-		//'relevance'
+		'relevance'
 	];
 
 	this.getRandomSort = function() {
