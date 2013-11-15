@@ -77,3 +77,5 @@ document.getElementById('templateList').onclick = tmplSelectionHandler;
 document.getElementById('photoList').onmouseover = photoHoverHandler;
 document.getElementById('photoList').onmouseout = photoHoverHandler;
 document.getElementById('photoList').onclick = photoPublishHandler;
+
+
