@@ -72,6 +72,7 @@
 .grayscale .photoText {
 	color: #000;
 	font-family: cursive;
+	text-shadow: 2px 2px 2px #fff;
 }
 
 .sepia .photo {
