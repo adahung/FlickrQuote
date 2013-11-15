@@ -9,7 +9,6 @@ function renderAllPhotoNodes(photoListNode, text, tmplName) {
 
 function renderAllPhotoTemplates(templateListNode, text) {
 	var defaultTmpl = new PhotoTemplates();
-	console.log(defaultTmpl.templates);
 
 	for (var idx in defaultTmpl.templates) {
 		var tmplNode = document.createElement('li'),
