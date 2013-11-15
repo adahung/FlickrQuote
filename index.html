@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script-->
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.13.0/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/phototemplate.css">
+  </head>
+  <body>
+    <div id="main">
+      <div id="title">
+        <img src='./assets/img/flickr-logo.png' height="40">
+        <span>Quote</span> 
+      </div>
+      <div id="input">
+          <input id="qInput" type="text" placeholder="">
+      </div>
+      <div id="show">
+        <h1 id="quote"></h1>
+      </div>
+      <div id="select">
+        <span id="text"></span>
+      </div>
+      <div id="photos">
+        <ul id="photoList"></ul>
+      </div>
+      <div id="templateContainer">
+        <ul id="templateList">
+        </ul>
+      </div>
+    </div>
+    <div id="publish">
+      <div id="pubCameraWrapper">
+        <img id="pubCamera" src="assets/img/camera.png">
+      </div>
+      <img id="pubCameraBg" src="assets/img/camera.png">
+      <div id="pubPhoto">
+        <img class="pubPhotoIcon" src="assets/img/flickrquote-icon.png">
+      </div>
+      <div id="pubMsg">
+        <div class="logo">
+            <img class="pubPhotoIcon" src="assets/img/flickrquote-icon.png">
+        </div>
+        <div class="info">
+          <h2>Photographer</h2>
+          <p><a href="" class="flickrblue">adahung</a> from <a href="" class="flickrpink">FlickrCentral</a></p>
+          <h2>Producer</h2>
+          <p><a class="flickrpink" href="">adahung</a></p>
+        </div>
+        <ul id="share">
+          <li class="btn flickr"></li>
+          <li class="btn facebook"></li>
+          <li class="btn instagram"></li>
+          <li class="btn ymail"></li>
+        </ul>
+        <div class="back">
+          <a href="" onclick="window.location.reload();">
+            Take another <span class="flickrblue">Flickr</span><span class="flickrpink">Quote</span></b>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/quotes.js"></script>
+    <script src="assets/js/httprequest.js"></script>
+    <script src="assets/js/phototemplate.js"></script>
+    <script src="assets/js/publish.js"></script>
+    <script src="assets/js/index.js"></script>
+    <!--script src="assets/js/html2canvas.js"></script-->
+  </body>
+</html>
