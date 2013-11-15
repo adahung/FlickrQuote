@@ -20,7 +20,7 @@ function doSomethingWithSelectedText() {
         group = flickrGroups.getRandomGroup(),
         sort = flickrParams.getRandomSort();
     if (selectedText) {
-        document.getElementById('text').innerHTML = 'Search <b>' + selectedText + '</b> in <b>' + group.name + '</b> (' + sort + ')';
+        document.getElementById('text').innerHTML = 'Search <b class="flickrblue">' + selectedText + '</b> in <b class="flickrpink">' + group.name + '</b> (' + sort + ')';
         getPhotosFromFlickr(selectedText, group.id, sort);
     }
 }

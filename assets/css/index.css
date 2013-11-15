@@ -49,7 +49,7 @@ body {
 	position: fixed;
 	top: 0;
 	z-index: 100;
-	/*display: none;*/
+	display: none;
 }
 
 #pubCamera,
@@ -148,14 +148,6 @@ body {
 	color: #fcfcfc;
 }
 
-#pubMsg .flickrblue {
-	color: #0063dc;
-}
-
-#pubMsg .flickrpink {
-	color: #ff0084;
-}
-
 #pubMsg .btn.flickr {
 	background-image: url('http://i2.wp.com/touchreviews.net/wp-content/uploads/2013/10/Flickr-icon.png?fit=1024%2C1024');
 	background-size: 50px 50px;
@@ -175,3 +167,12 @@ body {
 	background-image: url('http://www.freakyperfect.com/wp-content/uploads/2011/05/instagram-logo.png');
 	background-size: 50px 50px;
 }
+
+.flickrblue {
+	color: #0063dc;
+}
+
+.flickrpink {
+	color: #ff0084;
+}
+
