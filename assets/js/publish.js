@@ -60,10 +60,13 @@ function showPublishOverlay(photoNode) {
 		overlay,
 		canvasPhoto;
 
-	publishOverlay.style.display = 'block';
+	// render publish info
+	showPublishInfo();
 
 	canvasPhoto = getPublishPhoto(photoNode);
 	publishPhoto.appendChild(canvasPhoto);
+
+	publishOverlay.style.display = 'block';
 
 	// animate the photo out of camera
 	var internal = setInterval(function() {
@@ -76,6 +79,18 @@ function showPublishOverlay(photoNode) {
 		}
 		
 	}, 10);
+
+}
+
+function showPublishInfo() {
+	var photographer = 'adahung',
+		photogroup = 'FlickrCentral',
+		photoquoter = 'adahung';
+
+	photogroup = document.getElementById('pickgroup').innerHTML;
+	document.getElementById('photographer').innerHTML = photographer;
+	document.getElementById('photogroup').innerHTML = photogroup;
+	document.getElementById('photoquoter').innerHTML = photoquoter;
 
 }
 
