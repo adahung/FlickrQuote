@@ -56,3 +56,42 @@ function renderPhotoTemplate(photoNode, text, tmplName) {
 	photoNode.appendChild(photoMask);
 }
 
+function tmplHoverHandler(e) {
+	var elem, evt = e ? e:event,
+		parentNode;
+	if (evt.srcElement)  elem = evt.srcElement;
+	else if (evt.target) elem = evt.target;
+
+	parentNode = elem.parentNode;
+	// remove camera overlay if mouseout of overlay
+	if (elem.className == 'photo-mask') {
+		if (evt.type == 'mouseout') {
+	        parentNode.classList.remove('hover');
+	        renderTmplOverlay(parentNode);
+		}
+		else if (evt.type == 'mouseover' && !parentNode.classList.contains('hover')) {
+			parentNode.classList.add('hover');
+			renderTmplOverlay(parentNode);
+		}
+	}
+	
+	return true;
+}
+
+function renderTmplOverlay(el) {
+	if (el.classList.contains('hover')) {
+		var overlay = document.createElement('div'),
+			text = document.createElement('span');
+		
+		text.className = 'tmpl-text';
+		text.innerHTML = 'Choose this template';
+		overlay.className = 'tmpl-overlay';
+		overlay.appendChild(text);
+		el.appendChild(overlay);
+	}
+	else {
+		var overlay = el.getElementsByClassName('tmpl-overlay')[0];
+		el.removeChild(overlay);
+	}
+}
+
