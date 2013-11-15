@@ -2,6 +2,11 @@ body {
 	font-size: 15px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	line-height: 18px;
+
+}
+
+#main {
+	margin: 20px;
 }
 
 #title {
@@ -103,7 +108,7 @@ body {
 	width: 500px;
 	position: absolute;
 	top: 300px;
-	left: 800px;
+	left: 750px;
 	/*background-color: #fff;
 	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.75);*/
 	color: #fff;
