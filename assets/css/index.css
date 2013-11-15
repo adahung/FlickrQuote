@@ -90,6 +90,7 @@ body {
 	top: 100px;
 	left: 523px;
 	background-color: #fff;
+	box-shadow: 5px 5px 100px #CCC;
 }
 
 #pubPhoto .pubPhotoIcon {
